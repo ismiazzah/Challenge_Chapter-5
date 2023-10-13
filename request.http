@@ -1,0 +1,74 @@
+# CREATE USER
+###
+POST http://localhost:3000/api/v1/users
+Content-Type: application/json
+
+{
+  "name": " Ismiazzah",
+  "email": "mia@gmail.com",
+  "password": "87654321",
+  "identity_type": "NO HP",
+  "identity_number": "08213456789"
+}
+
+# GET ALL USERS
+###
+GET http://localhost:3000/api/v1/users
+
+# GET DETAIL USER
+###
+GET http://localhost:3000/api/v1/users/1
+
+# UPDATE USER PROFILE
+# 1 is userId
+###
+PUT http://localhost:3000/api/v1/users/1 
+Content-Type: application/json
+
+{
+  "identity_type": "NO HP",
+  "identity_number": "08123456789",
+  "address": "yogyakarta1"
+}
+
+# CREATE ACCOUNT
+###
+POST http://localhost:3000/api/v1/accounts
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "bank_name": "BCA",
+  "bank_account_number": "081929182741332",
+  "balance": 1500000
+}
+
+# GET ALL ACCOUNTS
+###
+GET http://localhost:3000/api/v1/accounts
+
+# GET DETAIL ACCOUNT
+###
+GET http://localhost:3000/api/v1/accounts/1
+
+# CREATE TRANSACTION
+###
+POST http://localhost:3000/api/v1/transactions
+Content-Type: application/json
+
+{
+  "amount": 1000,
+  "source_account_id": 1,
+  "destination_account_id":2 
+}
+
+# GET ALL TRANSACTIONS
+###
+GET http://localhost:3000/api/v1/transactions
+
+# GET DETAIL TRANSACTIONS
+###
+GET http://localhost:3000/api/v1/transactions/1
+
+
+## DELETE http://localhost:3000/api/v1/users/5
